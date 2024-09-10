@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Work\\Coding\\vibe-log\\vibe-backend\\vibe-backend.csproj": {}
+    "C:\\Work\\Coding\\vibe-log-backend\\vibe-backend.csproj": {}
   },
   "projects": {
-    "C:\\Work\\Coding\\vibe-log\\vibe-backend\\vibe-backend.csproj": {
+    "C:\\Work\\Coding\\vibe-log-backend\\vibe-backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Work\\Coding\\vibe-log\\vibe-backend\\vibe-backend.csproj",
+        "projectUniqueName": "C:\\Work\\Coding\\vibe-log-backend\\vibe-backend.csproj",
         "projectName": "vibe-backend",
-        "projectPath": "C:\\Work\\Coding\\vibe-log\\vibe-backend\\vibe-backend.csproj",
+        "projectPath": "C:\\Work\\Coding\\vibe-log-backend\\vibe-backend.csproj",
         "packagesPath": "C:\\Users\\mwillard\\.nuget\\packages\\",
-        "outputPath": "C:\\Work\\Coding\\vibe-log\\vibe-backend\\obj\\",
+        "outputPath": "C:\\Work\\Coding\\vibe-log-backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -22,15 +22,15 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {}
           }
         },
@@ -41,12 +41,12 @@
         }
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[6.0.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -72,7 +72,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
