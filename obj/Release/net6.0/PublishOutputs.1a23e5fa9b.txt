@@ -1,0 +1,14 @@
+C:\Work\Coding\vibe-log-backend\Out\vibe-backend.exe
+C:\Work\Coding\vibe-log-backend\Out\appsettings.Development.json
+C:\Work\Coding\vibe-log-backend\Out\appsettings.json
+C:\Work\Coding\vibe-log-backend\Out\vibe-backend.dll
+C:\Work\Coding\vibe-log-backend\Out\vibe-backend.deps.json
+C:\Work\Coding\vibe-log-backend\Out\vibe-backend.runtimeconfig.json
+C:\Work\Coding\vibe-log-backend\Out\vibe-backend.pdb
+C:\Work\Coding\vibe-log-backend\Out\Microsoft.EntityFrameworkCore.dll
+C:\Work\Coding\vibe-log-backend\Out\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Work\Coding\vibe-log-backend\Out\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Work\Coding\vibe-log-backend\Out\Microsoft.OpenApi.dll
+C:\Work\Coding\vibe-log-backend\Out\Swashbuckle.AspNetCore.Swagger.dll
+C:\Work\Coding\vibe-log-backend\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Work\Coding\vibe-log-backend\Out\Swashbuckle.AspNetCore.SwaggerUI.dll

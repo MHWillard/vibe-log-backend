@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\vibe-backend.props" />
+</Project>
