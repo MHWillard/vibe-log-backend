@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "t2SxIGVeuBArPQmsM61cUN3eZpvQF7NgfzKub5v53MQ=",
+  "Source": "vibe-log-backend",
+  "BasePath": "_content/vibe-log-backend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

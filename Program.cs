@@ -3,9 +3,10 @@ using Microsoft.EntityFrameworkCore;
 using vibe_backend.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("Vibes") ?? "Data Source=Vibe.db";
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddDbContext<UserDb>(options => options.UseInMemoryDatabase("users"));
+builder.Services.AddSqlite<PostDb>(connectionString);
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
@@ -26,39 +27,15 @@ if (app.Environment.IsDevelopment())
     });
 }
 
-app.MapGet("/", () => "Hello World!");
+app.MapGet("/posts", async (PostDb db) => await db.Posts.ToListAsync());
 
-app.MapGet("/users", async (UserDb db) => await db.Users.ToListAsync());
-
-app.MapPost("/user", async (UserDb db, User user) =>
+app.MapPost("/post", async (PostDb db, Post post) =>
 {
-    await db.Users.AddAsync(user);
+    await db.Posts.AddAsync(post);
     await db.SaveChangesAsync();
-    return Results.Created($"/user/{user.Id}", user);
+    return Results.Created($"/post/{post.Id}", post);
 });
 
-app.MapGet("/user/{id}", async (UserDb db, int id) => await db.Users.FindAsync(id));
-
-app.MapPut("/user/{id}", async (UserDb db, User updateuser, int id) =>
-{
-    var user = await db.Users.FindAsync(id);
-    if (user is null) return Results.NotFound();
-    user.Name = updateuser.Name;
-    user.Description = updateuser.Description;
-    await db.SaveChangesAsync();
-    return Results.NoContent();
-});
-
-app.MapDelete("/user/{id}", async (UserDb db, int id) =>
-{
-    var user = await db.Users.FindAsync(id);
-    if (user is null)
-    {
-        return Results.NotFound();
-    }
-    db.Users.Remove(user);
-    await db.SaveChangesAsync();
-    return Results.Ok();
-});
+app.MapGet("/post/{id}", async (PostDb db, int id) => await db.Posts.FindAsync(id));
 
 app.Run();
