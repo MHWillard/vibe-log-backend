@@ -18,14 +18,14 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 var app = builder.Build();
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "VibeLog API V1");
     });
-}
+//}
 
 app.MapGet("/posts", async (PostDb db) => await db.Posts.ToListAsync());
 
