@@ -1743,19 +1743,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Gatack\\.nuget\\packages\\": {}
+    "C:\\Users\\mwillard\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Gatack\\Desktop\\Coding\\Coding Projects\\vibe-log-backend\\vibe-log-backend.csproj",
+      "projectUniqueName": "C:\\Work\\Coding\\vibe-log-backend\\vibe-log-backend.csproj",
       "projectName": "vibe-log-backend",
-      "projectPath": "C:\\Users\\Gatack\\Desktop\\Coding\\Coding Projects\\vibe-log-backend\\vibe-log-backend.csproj",
-      "packagesPath": "C:\\Users\\Gatack\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Gatack\\Desktop\\Coding\\Coding Projects\\vibe-log-backend\\obj\\",
+      "projectPath": "C:\\Work\\Coding\\vibe-log-backend\\vibe-log-backend.csproj",
+      "packagesPath": "C:\\Users\\mwillard\\.nuget\\packages\\",
+      "outputPath": "C:\\Work\\Coding\\vibe-log-backend\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Gatack\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mwillard\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1823,7 +1828,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

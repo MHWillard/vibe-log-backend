@@ -12,6 +12,12 @@ namespace vibe_backend.Models
         public string? Content { get; set; }
     }
 
+    public class Feed
+    {
+        public int UserId { get; set; }
+        public List<Post> Posts { get; set; }
+    }
+
     class PostDb : DbContext
     {
         public PostDb(DbContextOptions options) : base(options) { }
