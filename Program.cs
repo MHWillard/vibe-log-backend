@@ -7,6 +7,10 @@ var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("Vibes") ?? "Data Source=Vibe.db";
 
+builder.Services.AddDbContextPool<FeedContext>(opt =>
+    opt.UseNpgsql(builder.Configuration.GetConnectionString("BloggingContext")));
+////var connectionString = "Host=myserver;Username=mylogin;Password=mypass;Database=mydatabase";
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSqlite<PostDb>(connectionString);
 builder.Services.AddSwaggerGen(c =>
@@ -30,6 +34,12 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 app.UseCors(MyAllowSpecificOrigins);
+
+/*
+ set up psql as if running locally
+change out envs to match internet ones
+test routes
+ */
 
 //if (app.Environment.IsDevelopment())
 //{
