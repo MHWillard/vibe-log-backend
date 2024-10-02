@@ -1,18 +1,32 @@
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
 using vibe_backend.Models;
+using Npgsql;
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
-
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("Vibes") ?? "Data Source=Vibe.db";
+
+//var connectionString = builder.Configuration.GetConnectionString("Vibes") ?? "Data Source=Vibe.db";
+
+var connectionString = "Host=localhost;Port=5432;Database=vibe_db;Username=postgres;Password=dat45586";
 
 builder.Services.AddDbContextPool<FeedContext>(opt =>
-    opt.UseNpgsql(builder.Configuration.GetConnectionString("BloggingContext")));
-////var connectionString = "Host=myserver;Username=mylogin;Password=mypass;Database=mydatabase";
+    opt.UseNpgsql(connectionString));
+
+//await using var conn = new NpgsqlConnection(connectionString);
+//await conn.OpenAsync();
+
+/*
+var dataSourceBuilder = new NpgsqlDataSourceBuilder(builder.Configuration.GetConnectionString("DefaultConnection"));
+dataSourceBuilder.MapEnum<Mood>();
+dataSourceBuilder.UseNodaTime();
+var dataSource = dataSourceBuilder.Build();
+
+builder.Services.AddDbContextPool<FeedContext>(opt => opt.UseNpgsql(dataSource));
+*/
+
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSqlite<PostDb>(connectionString);
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
@@ -50,6 +64,18 @@ app.UseSwagger();
     });
 //}
 
+app.MapGet("/",() => "Hello World");
+
+app.MapGet("/posts", async (FeedContext db) =>
+{
+    //await using var conn = new NpgsqlConnection(connectionString);
+    //await conn.OpenAsync();
+    //return Results.Ok(await db.Posts.ToListAsync());
+
+    //try normal Psql query to test
+});
+
+/*
 app.MapGet("/posts", async (PostDb db) => await db.Posts.ToListAsync());
 
 app.MapPost("/post", async (PostDb db, Post post) =>
@@ -60,5 +86,5 @@ app.MapPost("/post", async (PostDb db, Post post) =>
 });
 
 app.MapGet("/post/{id}", async (PostDb db, int id) => await db.Posts.FindAsync(id));
-
+*/
 app.Run();

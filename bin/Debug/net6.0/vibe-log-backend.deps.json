@@ -11,6 +11,7 @@
           "Microsoft.EntityFrameworkCore.Design": "6.0.0",
           "Microsoft.EntityFrameworkCore.InMemory": "6.0.0",
           "Microsoft.EntityFrameworkCore.Sqlite": "6.0.0",
+          "Npgsql": "6.0.12",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "6.0.0",
           "Swashbuckle.AspNetCore": "6.5.0"
         },
@@ -188,14 +189,14 @@
           }
         }
       },
-      "Npgsql/6.0.0": {
+      "Npgsql/6.0.12": {
         "dependencies": {
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         },
         "runtime": {
           "lib/net6.0/Npgsql.dll": {
-            "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.0.0.0"
+            "assemblyVersion": "6.0.12.0",
+            "fileVersion": "6.0.12.0"
           }
         }
       },
@@ -204,7 +205,7 @@
           "Microsoft.EntityFrameworkCore": "6.0.0",
           "Microsoft.EntityFrameworkCore.Abstractions": "6.0.0",
           "Microsoft.EntityFrameworkCore.Relational": "6.0.0",
-          "Npgsql": "6.0.0"
+          "Npgsql": "6.0.12"
         },
         "runtime": {
           "lib/net6.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {
@@ -551,12 +552,12 @@
       "path": "microsoft.openapi/1.2.3",
       "hashPath": "microsoft.openapi.1.2.3.nupkg.sha512"
     },
-    "Npgsql/6.0.0": {
+    "Npgsql/6.0.12": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-8m2AXZgX7b/VYL6D7aQ1M/hu7vQ+QvVHxaHelriupN2hZqEhcwJkPiICLBVSX/+xm+iN8mZVEUvD7ujmgpTgLw==",
-      "path": "npgsql/6.0.0",
-      "hashPath": "npgsql.6.0.0.nupkg.sha512"
+      "sha512": "sha512-bP7JxY0ugZcKZTcPgYlBRHa+TVnEdBIeV4Kj7K/SJEsCRPKikEhTFzn9goVNDFjACDMPTzcKrczpLCtIcISH0Q==",
+      "path": "npgsql/6.0.12",
+      "hashPath": "npgsql.6.0.12.nupkg.sha512"
     },
     "Npgsql.EntityFrameworkCore.PostgreSQL/6.0.0": {
       "type": "package",

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "r67LkxMpL0RBe7XSDxHmmNBEKD/eQtODqMPiIiUPnv4F/qcAzWav1/tGQcM5Qxo5PM+dUoZ0dCeY9lARRAX/dA==",
+  "dgSpecHash": "VoeR1dYrK4Y2Rr5yn7zD8HLm9H3gOi7vYI5Vh1+gHP3qt+fcOZCv2GfmSFkgkiUXFrvPvOmTMT4J5OWbhU2Jxw==",
   "success": true,
   "projectFilePath": "C:\\Work\\Coding\\vibe-log-backend\\vibe-log-backend.csproj",
   "expectedPackageFiles": [
@@ -26,7 +26,7 @@
     "C:\\Users\\mwillard\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\mwillard\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\mwillard\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
-    "C:\\Users\\mwillard\\.nuget\\packages\\npgsql\\6.0.0\\npgsql.6.0.0.nupkg.sha512",
+    "C:\\Users\\mwillard\\.nuget\\packages\\npgsql\\6.0.12\\npgsql.6.0.12.nupkg.sha512",
     "C:\\Users\\mwillard\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\6.0.0\\npgsql.entityframeworkcore.postgresql.6.0.0.nupkg.sha512",
     "C:\\Users\\mwillard\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.6\\sqlitepclraw.bundle_e_sqlite3.2.0.6.nupkg.sha512",
     "C:\\Users\\mwillard\\.nuget\\packages\\sqlitepclraw.core\\2.0.6\\sqlitepclraw.core.2.0.6.nupkg.sha512",
