@@ -1,29 +1,15 @@
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
-using vibe_backend.Models;
 using Npgsql;
+using vibe_backend.models;
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
-
-//var connectionString = builder.Configuration.GetConnectionString("Vibes") ?? "Data Source=Vibe.db";
 
 var connectionString = "Host=localhost;Port=5432;Database=vibe_db;Username=postgres;Password=dat45586";
 
 builder.Services.AddDbContextPool<FeedContext>(opt =>
     opt.UseNpgsql(connectionString));
-
-//await using var conn = new NpgsqlConnection(connectionString);
-//await conn.OpenAsync();
-
-/*
-var dataSourceBuilder = new NpgsqlDataSourceBuilder(builder.Configuration.GetConnectionString("DefaultConnection"));
-dataSourceBuilder.MapEnum<Mood>();
-dataSourceBuilder.UseNodaTime();
-var dataSource = dataSourceBuilder.Build();
-
-builder.Services.AddDbContextPool<FeedContext>(opt => opt.UseNpgsql(dataSource));
-*/
 
 
 builder.Services.AddEndpointsApiExplorer();
@@ -66,11 +52,22 @@ app.UseSwagger();
 
 app.MapGet("/",() => "Hello World");
 
+
 app.MapGet("/posts", async (FeedContext db) =>
 {
     //await using var conn = new NpgsqlConnection(connectionString);
     //await conn.OpenAsync();
-    //return Results.Ok(await db.Posts.ToListAsync());
+    return Results.Ok(await db.posts.ToListAsync());
+
+    //NEXT: => completely destroy and rebuild Posts.cs and try then
+});
+
+
+app.MapGet("/feeds", async (FeedContext db) =>
+{
+    //await using var conn = new NpgsqlConnection(connectionString);
+    //await conn.OpenAsync();
+    return Results.Ok(await db.feeds.ToListAsync());
 
     //try normal Psql query to test
 });
