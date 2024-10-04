@@ -28,7 +28,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
                       policy =>
                       {
-                          policy.WithOrigins("https://vibe-log-frontend.pages.dev").AllowAnyHeader().AllowAnyMethod();
+                          policy.WithOrigins("https://vibe-log-frontend.pages.dev","http://localhost:3000").AllowAnyHeader().AllowAnyMethod();
                       });
 });
 
@@ -50,38 +50,28 @@ app.UseSwagger();
     });
 //}
 
-app.MapGet("/",() => "Hello World");
 
+app.MapGet("/",() => "Hello World");
 
 app.MapGet("/posts", async (FeedContext db) =>
 {
-    //await using var conn = new NpgsqlConnection(connectionString);
-    //await conn.OpenAsync();
     return Results.Ok(await db.posts.ToListAsync());
-
-    //NEXT: => completely destroy and rebuild Posts.cs and try then
 });
 
 
 app.MapGet("/feeds", async (FeedContext db) =>
 {
-    //await using var conn = new NpgsqlConnection(connectionString);
-    //await conn.OpenAsync();
     return Results.Ok(await db.feeds.ToListAsync());
-
-    //try normal Psql query to test
 });
 
-/*
-app.MapGet("/posts", async (PostDb db) => await db.Posts.ToListAsync());
-
-app.MapPost("/post", async (PostDb db, Post post) =>
+app.MapPost("/post", async (FeedContext db, Post post) =>
 {
-    await db.Posts.AddAsync(post);
+    //this will probably get the post information, build a post object here, and then add it async accordingly here on the backend
+    await db.posts.AddAsync(post);
     await db.SaveChangesAsync();
-    return Results.Created($"/post/{post.Id}", post);
+    return Results.Created($"/post/{post.post_id}", post);
 });
 
-app.MapGet("/post/{id}", async (PostDb db, int id) => await db.Posts.FindAsync(id));
-*/
+app.MapGet("/post/{post_id}", async (FeedContext db, int post_id) => await db.posts.FindAsync(post_id));
+
 app.Run();

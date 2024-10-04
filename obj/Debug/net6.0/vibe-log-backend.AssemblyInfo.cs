@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("vibe-log-backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+156fb018497ed64e74cdc4310839a5eaf8b58700")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+15509928a771d17163d35d97205f3e1af66f7563")]
 [assembly: System.Reflection.AssemblyProductAttribute("vibe-log-backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("vibe-log-backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
