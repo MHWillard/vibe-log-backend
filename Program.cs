@@ -59,17 +59,17 @@ app.MapGet("/posts", async (FeedContext db) =>
 });
 
 
-app.MapGet("/feeds", async (FeedContext db) =>
+app.MapGet("/feed/{user_id}", async (FeedContext db) =>
 {
     return Results.Ok(await db.feeds.ToListAsync());
 });
 
-app.MapPost("/post", async (FeedContext db, Post post) =>
+app.MapPost("/new-post", async (FeedContext db, Post post) =>
 {
     //this will probably get the post information, build a post object here, and then add it async accordingly here on the backend
     await db.posts.AddAsync(post);
     await db.SaveChangesAsync();
-    return Results.Created($"/post/{post.post_id}", post);
+    return Results.Created($"/new-post/{post.post_id}", post);
 });
 
 app.MapGet("/post/{post_id}", async (FeedContext db, int post_id) => await db.posts.FindAsync(post_id));
