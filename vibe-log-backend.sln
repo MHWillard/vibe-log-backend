@@ -5,7 +5,10 @@ VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "vibe-log-backend", "vibe-log-backend.csproj", "{10263D4D-C4ED-41FE-8A14-97C8B193EA9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "unit-tests", "unit-tests\unit-tests.csproj", "{CFA4E13A-DE6E-4DF6-B49F-4EB4C87A809A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "unit-tests", "unit-tests\unit-tests.csproj", "{CFA4E13A-DE6E-4DF6-B49F-4EB4C87A809A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{10263D4D-C4ED-41FE-8A14-97C8B193EA9E} = {10263D4D-C4ED-41FE-8A14-97C8B193EA9E}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
