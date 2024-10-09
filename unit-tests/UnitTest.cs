@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestPlatform.TestHost;
 using System.Net.Http.Json;
 using System.Net;
-using vibe-log-backend.vibe_backend.models;
+using vibe_backend.models;
 
 namespace unit_tests
 {
@@ -39,6 +39,11 @@ namespace unit_tests
             // Assert
             response.EnsureSuccessStatusCode();
             var result = await JsonSerializer.Deserialize<Post>(await response.Content.ReadFromJsonAsync<Post>());
+            /*
+                 await db.posts.AddAsync(post);
+    await db.SaveChangesAsync();
+    return Results.Created($"/new-post/{post.post_id}", post);
+             */
 
             Assert.Equal(HttpStatusCode.Created, response.StatusCode);
             Assert.NotNull(result.post_id);

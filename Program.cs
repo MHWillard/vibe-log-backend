@@ -64,8 +64,16 @@ app.MapGet("/feed/{user_id}", async (FeedContext db) =>
     return Results.Ok(await db.feeds.ToListAsync());
 });
 
-app.MapPost("/new-post", async (FeedContext db, Post post) =>
+app.MapPost("/new-post", async (FeedContext db) =>
 {
+    //get data from frontend as json/object
+    //turn it into a Post post
+    //then add
+    Post post = new Post();
+    post.post_id = 12345;
+    post.userid = 1;
+    post.content = "content";
+
     //this will probably get the post information, build a post object here, and then add it async accordingly here on the backend
     await db.posts.AddAsync(post);
     await db.SaveChangesAsync();
