@@ -60,3 +60,14 @@ C:\Work\Coding\vibe-log-backend\obj\Debug\net6.0\refint\vibe-log-backend.dll
 C:\Work\Coding\vibe-log-backend\obj\Debug\net6.0\vibe-log-backend.pdb
 C:\Work\Coding\vibe-log-backend\obj\Debug\net6.0\vibe-log-backend.genruntimeconfig.cache
 C:\Work\Coding\vibe-log-backend\obj\Debug\net6.0\ref\vibe-log-backend.dll
+C:\Work\Coding\vibe-log-backend\bin\Debug\net6.0\xunit.runner.visualstudio.testadapter.dll
+C:\Work\Coding\vibe-log-backend\bin\Debug\net6.0\xunit.runner.reporters.netcoreapp10.dll
+C:\Work\Coding\vibe-log-backend\bin\Debug\net6.0\xunit.runner.utility.netcoreapp10.dll
+C:\Work\Coding\vibe-log-backend\bin\Debug\net6.0\FluentAssertions.dll
+C:\Work\Coding\vibe-log-backend\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Work\Coding\vibe-log-backend\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Work\Coding\vibe-log-backend\bin\Debug\net6.0\xunit.abstractions.dll
+C:\Work\Coding\vibe-log-backend\bin\Debug\net6.0\xunit.assert.dll
+C:\Work\Coding\vibe-log-backend\bin\Debug\net6.0\xunit.core.dll
+C:\Work\Coding\vibe-log-backend\bin\Debug\net6.0\xunit.execution.dotnet.dll
+C:\Work\Coding\vibe-log-backend\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
