@@ -64,21 +64,29 @@ app.MapGet("/feed/{user_id}", async (FeedContext db) =>
     return Results.Ok(await db.feeds.ToListAsync());
 });
 
-app.MapPost("/new-post", async (FeedContext db) =>
+app.MapPost("/new-post", async (FeedContext db, HttpContext ctx) =>
 {
-    //get data from frontend as json/object
-    //turn it into a Post post
-    //then add
-    Post post = new Post();
-    post.post_id = 12345;
-    post.userid = 1;
-    post.content = "content";
+    var requestBody = await new StreamReader(ctx.Request.Body).ReadToEndAsync();
+    Console.WriteLine($"Received post content: {requestBody}");
 
-    //this will probably get the post information, build a post object here, and then add it async accordingly here on the backend
-    /*
+    Post post = new Post();
+    post.userid = 4;
+    post.content = requestBody;
+
     await db.posts.AddAsync(post);
     await db.SaveChangesAsync();
     return Results.Created($"/new-post/{post.post_id}", post);
+
+    //return Results.Ok(new { success = true, message = "Post received successfully" });
+
+    /*get data from frontend as json/object
+    //turn it into a Post post
+    //then add
+    */
+
+    //this will probably get the post information, build a post object here, and then add it async accordingly here on the backend
+    /*
+
     */
 });
 
