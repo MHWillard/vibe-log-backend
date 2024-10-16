@@ -53,6 +53,8 @@ app.UseSwagger();
 
 app.MapGet("/",() => "Hello World");
 
+app.MapGet("/api/protected/user-id", () => 1234567890);
+
 app.MapGet("/posts", async (FeedContext db) =>
 {
     return Results.Ok(await db.posts.ToListAsync());
