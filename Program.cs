@@ -2,6 +2,7 @@ using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
 using vibe_backend.models;
+using vibe_backend.services;
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
@@ -68,16 +69,19 @@ app.MapGet("/feed/{user_id}", async (FeedContext db) =>
 
 app.MapPost("/new-post", async (FeedContext db, HttpContext ctx) =>
 {
-    var requestBody = await new StreamReader(ctx.Request.Body).ReadToEndAsync();
-    Console.WriteLine($"Received post content: {requestBody}");
+    var postData = await ctx.Request.ReadFromJsonAsync<PostData>();
+    if (postData != null)
+    {
+        // Process postData.Content and postData.UserId
+        Post post = new Post();
+        post.userid = int.Parse(postData.UserId);
+        post.content = postData.Content;
 
-    Post post = new Post();
-    post.userid = 4;
-    post.content = requestBody;
-
-    await db.posts.AddAsync(post);
-    await db.SaveChangesAsync();
-    return Results.Created($"/new-post/{post.post_id}", post);
+        await db.posts.AddAsync(post);
+        await db.SaveChangesAsync();
+        return Results.Ok(new { message = "Post created successfully" });
+    }
+    return Results.BadRequest(new { error = "Invalid data" });
 
     //return Results.Ok(new { success = true, message = "Post received successfully" });
 
