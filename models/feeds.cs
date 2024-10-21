@@ -7,7 +7,7 @@ namespace vibe_backend.models
     {
         [Key]
         public int feed_id { get; set; }
-        public int userid { get; set; }
+        public int user_id { get; set; }
         //public List<Post> posts { get; set; } = new();
     }
 }
