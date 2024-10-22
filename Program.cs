@@ -74,7 +74,7 @@ app.MapPost("/new-post", async (FeedContext db, HttpContext ctx) =>
     {
         // Process postData.Content and postData.UserId
         Post post = new Post();
-        post.userid = int.Parse(postData.UserId);
+        post.user_id = int.Parse(postData.UserId);
         post.content = postData.Content;
 
         await db.posts.AddAsync(post);
