@@ -110,4 +110,6 @@ app.MapGet("/test-posts", async (FeedContext db) =>
     });
 });
 
+app.MapGet("/test-post", () => "Returning a test post");
+
 app.Run();
