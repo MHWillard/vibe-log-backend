@@ -110,16 +110,13 @@ app.MapGet("/test-posts", async (FeedContext db) =>
     });
 });
 
-app.MapGet("/test-post", () => Results.Json(new[]
+app.MapGet("/test-post", () => new
 {
-    new
-    {
         post_table_id = 1,
         user_id = 1234,
         content = "Returning a test post",
         post_id = 5678,
         post_date = DateTime.UtcNow
-    }
-}));
+});
 
 app.Run();
