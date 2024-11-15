@@ -7,9 +7,11 @@ using System.Reflection.Metadata.Ecma335;
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
+builder.Configuration.AddEnvironmentVariables();
 
-//var connectionString = "Host=localhost;Port=5432;Database=vibe_db;Username=postgres;Password=dat45586";
-var connectionString = "Host=postgres.railway.internal;Port=5432;Database=railway;Username=postgres;Password=YHDbYyQeHrnnhJEtoZCngCUuenoSfbsC";
+//var connectionString = "Host=postgres.railway.internal;Port=5432;Database=railway;Username=postgres;Password=YHDbYyQeHrnnhJEtoZCngCUuenoSfbsC";
+var connectionString = Environment.GetEnvironmentVariable("CONNECTIONSTRING");
+
 
 builder.Services.AddDbContextPool<FeedContext>(opt =>
     opt.UseNpgsql(connectionString));
