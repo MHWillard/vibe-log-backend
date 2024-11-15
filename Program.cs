@@ -9,8 +9,8 @@ var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddEnvironmentVariables();
 
-//var connectionString = "Host=postgres.railway.internal;Port=5432;Database=railway;Username=postgres;Password=YHDbYyQeHrnnhJEtoZCngCUuenoSfbsC";
-var connectionString = Environment.GetEnvironmentVariable("CONNECTIONSTRING");
+var connectionString = "Host=postgres.railway.internal;Port=5432;Database=railway;Username=postgres;Password=YHDbYyQeHrnnhJEtoZCngCUuenoSfbsC";
+//var connectionString = Environment.GetEnvironmentVariable("CONNECTIONSTRING");
 
 
 builder.Services.AddDbContextPool<FeedContext>(opt =>
