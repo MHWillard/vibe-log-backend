@@ -72,25 +72,13 @@ app.MapPost("/new-post", async (FeedContext db, HttpContext ctx) =>
         post.post_id = 5678;
         post.post_date = DateTime.UtcNow;
         post.user_id = 5555;
-        post.content = postData.Content;
+        post.vibe = postData.Vibe;
 
         await db.posts.AddAsync(post);
         await db.SaveChangesAsync();
         return Results.Ok(new { message = "Post created successfully" });
     }
     return Results.BadRequest(new { error = "Invalid data" });
-
-    //return Results.Ok(new { success = true, message = "Post received successfully" });
-
-    /*get data from frontend as json/object
-    //turn it into a Post post
-    //then add
-    */
-
-    //this will probably get the post information, build a post object here, and then add it async accordingly here on the backend
-    /*
-
-    */
 });
 
 app.MapGet("/post/{post_id}", async (FeedContext db, int post_id) => await db.posts.FindAsync(post_id));
