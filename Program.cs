@@ -72,7 +72,7 @@ app.MapPost("/new-post", async (FeedContext db, HttpContext ctx) =>
         post.post_id = 5678;
         post.post_date = DateTime.UtcNow;
         post.user_id = 5555;
-        post.vibe = postData.Vibe;
+        post.content = postData.Content;
 
         await db.posts.AddAsync(post);
         await db.SaveChangesAsync();

@@ -13,7 +13,5 @@ namespace vibe_backend.models
         public int post_id { get; set; }
 
         public DateTime post_date { get; set; }
-
-        public string vibe {  get; set; }
     }
 }
