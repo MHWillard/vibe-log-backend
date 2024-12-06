@@ -66,6 +66,10 @@
               "target": "Package",
               "version": "[6.0.0, )"
             },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "Npgsql": {
               "target": "Package",
               "version": "[6.0.12, )"

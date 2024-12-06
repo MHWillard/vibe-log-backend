@@ -4,6 +4,8 @@ using Npgsql;
 using vibe_backend.models;
 using vibe_backend.services;
 using System.Reflection.Metadata.Ecma335;
+using FluentAssertions.Common;
+using AspNetCoreRateLimit;
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
@@ -33,6 +35,27 @@ builder.Services.AddCors(options =>
                           policy.WithOrigins("https://vibe-log-frontend.pages.dev","http://localhost:3000").AllowAnyHeader().AllowAnyMethod();
                       });
 });
+
+builder.Services.AddOptions();
+builder.Services.AddOptions();
+
+builder.Services.AddMemoryCache();
+
+var ip_rate_limits = builder.Configuration.GetSection("IpRateLimiting");
+var ip_rate_policies = builder.Configuration.GetSection("IpRateLimitPolicies");
+
+builder.Services.Configure<IpRateLimitOptions>(ip_rate_limits);
+
+builder.Services.Configure<IpRateLimitPolicies>(ip_rate_policies);
+
+builder.Services.AddInMemoryRateLimiting();
+//builder.Services.AddDistributedRateLimiting<AsyncKeyLockProcessingStrategy>();
+//builder.Services.AddDistributedRateLimiting<RedisProcessingStrategy>();
+//builder.Services.AddRedisRateLimiting();
+
+builder.Services.AddMvc();
+
+builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
 
 var app = builder.Build();
 app.UseCors(MyAllowSpecificOrigins);
