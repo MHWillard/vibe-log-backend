@@ -37,7 +37,6 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddOptions();
-builder.Services.AddOptions();
 
 builder.Services.AddMemoryCache();
 
@@ -69,6 +68,9 @@ app.UseSwagger();
     });
 //}
 
+app.UseIpRateLimiting();
+
+app.UseMvc();
 
 app.MapGet("/",() => "Hello World");
 
