@@ -52,7 +52,7 @@ builder.Services.AddInMemoryRateLimiting();
 //builder.Services.AddDistributedRateLimiting<RedisProcessingStrategy>();
 //builder.Services.AddRedisRateLimiting();
 
-builder.Services.AddMvc();
+builder.Services.AddMvc(options => options.EnableEndpointRouting = false);
 
 builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
 
